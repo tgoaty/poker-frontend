@@ -12,6 +12,7 @@ const StartPage = () => {
         }
     }, []);
 
+
     return (
         <div>
             <NameForm/>

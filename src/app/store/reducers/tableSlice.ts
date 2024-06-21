@@ -1,16 +1,16 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {votingSystem} from "src/shared/types/types";
+import {votingSystemENUM} from "src/shared/types/types";
 import {NIL as NIL_UUID } from "uuid"
 
 interface tableState {
     tableName: string;
-    votingSystem: votingSystem;
+    votingSystem: votingSystemENUM;
     id: string;
 }
 
 const initialState: tableState = {
     tableName: '',
-    votingSystem: votingSystem.POWERS_OF_TWO,
+    votingSystem: votingSystemENUM.POWERS_OF_TWO,
     id: NIL_UUID,
 };
 
@@ -21,7 +21,7 @@ const tableSlice = createSlice({
         setTableName(state, action: PayloadAction<string>) {
             state.tableName = action.payload;
         },
-        setVotingSystem(state, action: PayloadAction<votingSystem>) {
+        setVotingSystem(state, action: PayloadAction<votingSystemENUM>) {
             state.votingSystem = action.payload
         },
         setId(state, action: PayloadAction<string>) {

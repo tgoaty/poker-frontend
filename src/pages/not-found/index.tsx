@@ -1,10 +1,18 @@
+import { Result, Button } from 'antd';
 import React from 'react';
+import {useNavigate} from "react-router-dom";
 
 const NotFoundPage = () => {
+    const navigate = useNavigate();
+    const goHome = () => {
+        navigate("/create-table", {replace: true})
+    }
     return (
-        <div>
-            NOT FOUND 4040404
-        </div>
+        <Result style={{marginTop: 200}}
+            icon={''}
+            title="404 Page not found"
+            extra={<Button onClick={goHome} type="primary">Home</Button>}
+        />
     );
 };
 

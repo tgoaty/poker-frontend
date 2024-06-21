@@ -1,5 +1,7 @@
-import React, { lazy } from "react";
+import React, { lazy, Suspense} from "react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {Row, Spin} from "antd";
+import Loader from "src/shared/ui/Loader";
 
 const CreateTablePage = lazy(() => import("./create-table"));
 const StartPage = lazy(() => import("./start"));
@@ -28,6 +30,9 @@ const router = createBrowserRouter([
 
 export const Routing = () => {
     return (
-        <RouterProvider router={router} />
+        <Suspense fallback={<Loader/>}>
+            <RouterProvider router={router} />
+        </Suspense>
+
     );
 };

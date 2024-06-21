@@ -1,10 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import config from "src/shared/config/config";
-import { votingSystem } from '../types/types';
+import { votingSystemENUM } from '../types/types';
 
 interface tableData {
     tableName: string;
-    votingSystem: votingSystem;
+    votingSystem: votingSystemENUM;
     id: string;
 }
 

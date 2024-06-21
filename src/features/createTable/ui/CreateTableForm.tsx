@@ -13,7 +13,6 @@ const CreateTableForm = () => {
     const navigate = useNavigate()
 
     const handleSubmit = async (values: { [key: string]: any }) => {
-        console.log(values);
         const id = uuidv4();
         await createTableData({tableName: values.tableName, votingSystem: values.votingSystem, id: id});
         navigate(`/table/${id}`, {replace: true});
@@ -33,7 +32,7 @@ const CreateTableForm = () => {
                     <Option value="FIBONACCI">Fibonacci ( 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ?, ☕ )</Option>
                     <Option value="ONE_TO_TEN">One to ten ( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ?, ☕
                         )</Option>
-                    <Option value="TSHIRTS">T-shirts (XS, S, M, L, XL, ?, ☕ )</Option>
+                    <Option value="TSHIRTS" disabled>T-shirts (XS, S, M, L, XL, ?, ☕ )</Option>
                     <Option value="POWERS_OF_TWO">Powers of 2 ( 0, 1, 2, 4, 8, 16, 32, 64, ?, ☕ )</Option>
                 </Select>
             </Form.Item>
